@@ -14,6 +14,7 @@ namespace EngineersMatrimony.Models
     
     public partial class Profile
     {
+        
         public int RegID { get; set; }
         public Nullable<int> MID { get; set; }
         public string PName { get; set; }

@@ -132,10 +132,12 @@
     <Compile Include="Controllers\AccountsController.cs" />
     <Compile Include="Controllers\AdminsController.cs" />
     <Compile Include="Controllers\Basic_ProfileController.cs" />
-    <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\InterestsController.cs" />
     <Compile Include="Controllers\PreferencesController.cs" />
     <Compile Include="Controllers\ProfilesController.cs" />
+    <Compile Include="Controllers\UploadController.cs" />
+    <Compile Include="Filters\AdminAuth.cs" />
+    <Compile Include="Filters\UserAuth.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -148,6 +150,7 @@
     <Compile Include="Models\Basic_Profile.cs">
       <DependentUpon>Model.tt</DependentUpon>
     </Compile>
+    <Compile Include="Models\FileUploadModel.cs" />
     <Compile Include="Models\Interest.cs">
       <DependentUpon>Model.tt</DependentUpon>
     </Compile>
@@ -179,6 +182,9 @@
     <Content Include="Content\bootstrap-theme.min.css" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\CardStyle.css" />
+    <Content Include="Content\OurStyle.css" />
+    <Content Include="Content\RegStyle.css" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
@@ -223,10 +229,6 @@
     <Content Include="Views\Web.config" />
     <Content Include="Views\_ViewStart.cshtml" />
     <Content Include="Views\Shared\Error.cshtml" />
-    <Content Include="Views\Shared\_Layout.cshtml" />
-    <Content Include="Views\Home\About.cshtml" />
-    <Content Include="Views\Home\Contact.cshtml" />
-    <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Accounts\Create.cshtml" />
     <Content Include="Views\Accounts\Delete.cshtml" />
     <Content Include="Views\Accounts\Details.cshtml" />
@@ -257,11 +259,22 @@
     <Content Include="Views\Profiles\Details.cshtml" />
     <Content Include="Views\Profiles\Edit.cshtml" />
     <Content Include="Views\Profiles\Index.cshtml" />
-    <Content Include="Views\Admins\SignIn.cshtml" />
+    <Content Include="Views\Shared\_SignInLayout.cshtml" />
     <Content Include="Views\Accounts\SignIn.cshtml" />
+    <Content Include="Views\Accounts\SignUp.cshtml" />
+    <Content Include="Views\Upload\UploadFile.cshtml" />
+    <Content Include="Views\Basic_Profile\IntrestedProfilesView.cshtml" />
+    <Content Include="Views\Basic_Profile\IncommingIntrest.cshtml" />
+    <Content Include="Views\Basic_Profile\Mutual.cshtml" />
+    <Content Include="Views\Shared\_RegistrationLayout.cshtml" />
+    <Content Include="Views\Shared\_CardLayout.cshtml" />
+    <Content Include="Views\Shared\_ErrorLayout.cshtml" />
+    <Content Include="Views\Admins\Login.cshtml" />
+    <Content Include="Views\Shared\_ProfilesLayout.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Images\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />

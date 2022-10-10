@@ -51,7 +51,9 @@ namespace EngineersMatrimony.Controllers
         }
         public ActionResult UnIntrested(Basic_Profile BP)
         {
-            Interest interest = db.Interests.SingleOrDefault(ints => ints.ToId == BP.MID);
+            int id = Convert.ToInt32(Session["MID"].ToString());
+            Interest interest = db.Interests.SingleOrDefault(ints => ints.ToId == BP.MID && ints.FromId == id);
+          
             if (interest != null)
             {
                 db.Interests.Remove(interest);
@@ -61,7 +63,9 @@ namespace EngineersMatrimony.Controllers
         }
         public ActionResult Decline(Basic_Profile BP)
         {
-            Interest interest = db.Interests.SingleOrDefault(ints => ints.FromId == BP.MID);
+            int id = Convert.ToInt32(Session["MID"].ToString());
+
+            Interest interest = db.Interests.SingleOrDefault(ints => ints.FromId == BP.MID && ints.ToId == id);
             if (interest != null)
             {
                 db.Interests.Remove(interest);

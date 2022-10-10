@@ -53,6 +53,47 @@ namespace EngineersMatrimony.Controllers
         public ActionResult Create()
         {
             ViewBag.MID = new SelectList(db.Accounts, "MID", "Username");
+            ViewBag.Genders = new List<SelectListItem>()
+            {
+                new SelectListItem{Text="Male" ,Value="Male"},
+                new SelectListItem{Text="Female", Value= "Female"},
+                new SelectListItem{Text="Others", Value = "Others"}
+            };
+            ViewBag.Districts = new List<SelectListItem>()
+            {
+               new SelectListItem{Text="Kasaragod" ,Value="Kasaragod"},
+                new SelectListItem{Text="Kannur", Value= "Kannur"},
+                new SelectListItem{Text="Kozhikode", Value = "Kozhikode"},
+                new SelectListItem{Text="Wayanad", Value = "Wayanad"},
+                new SelectListItem{Text="Malappuram", Value = "Malappuram"},
+                new SelectListItem{Text="Palakkad", Value = "Palakkad"},
+                new SelectListItem{Text="Thrissur", Value = "Thrissur"},
+                new SelectListItem{Text="Ernakulam", Value = "Ernakulam"},
+                new SelectListItem{Text="Kottayam", Value = "Kottayam"},
+                new SelectListItem{Text="Alappuzha", Value = "Alappuzha"},
+                new SelectListItem{Text="Pathanamthitta", Value = "Pathanamthitta"},
+                new SelectListItem{Text="Idukki", Value = "Idukki"},
+                new SelectListItem{Text="Kollam", Value = "Kollam"},
+                new SelectListItem{Text="Thiruvananthapuram", Value = "Thiruvananthapuram"},
+            };
+            ViewBag.FamType = new List<SelectListItem>()
+            {
+                new SelectListItem{Text = "Joint", Value = "Joint"},
+                new SelectListItem{Text = "Nuclear", Value = "Nuclear"}
+
+
+
+           };
+
+
+
+            ViewBag.MStatus = new List<SelectListItem>()
+            {
+               new SelectListItem{Text = "Single", Value = "Single"},
+               new SelectListItem{Text = "Divorced", Value = "Divorced"},
+               new SelectListItem{Text = "Widowed", Value = "Widowed"},
+               new SelectListItem{Text = "Any", Value = "Any"},
+            };
             return View();
         }
 
@@ -70,7 +111,47 @@ namespace EngineersMatrimony.Controllers
             int id = Convert.ToInt32(Session["MID"].ToString());
             Account acc = db.Accounts.SingleOrDefault(s => s.MID ==id);
 
+            ViewBag.Genders = new List<SelectListItem>()
+            {
+                new SelectListItem{Text="Male" ,Value="Male"},
+                new SelectListItem{Text="Female", Value= "Female"},
+                new SelectListItem{Text="Others", Value = "Others"}
+            };
+            ViewBag.Districts = new List<SelectListItem>()
+            {
+               new SelectListItem{Text="Kasaragod" ,Value="Kasaragod"},
+                new SelectListItem{Text="Kannur", Value= "Kannur"},
+                new SelectListItem{Text="Kozhikode", Value = "Kozhikode"},
+                new SelectListItem{Text="Wayanad", Value = "Wayanad"},
+                new SelectListItem{Text="Malappuram", Value = "Malappuram"},
+                new SelectListItem{Text="Palakkad", Value = "Palakkad"},
+                new SelectListItem{Text="Thrissur", Value = "Thrissur"},
+                new SelectListItem{Text="Ernakulam", Value = "Ernakulam"},
+                new SelectListItem{Text="Kottayam", Value = "Kottayam"},
+                new SelectListItem{Text="Alappuzha", Value = "Alappuzha"},
+                new SelectListItem{Text="Pathanamthitta", Value = "Pathanamthitta"},
+                new SelectListItem{Text="Idukki", Value = "Idukki"},
+                new SelectListItem{Text="Kollam", Value = "Kollam"},
+                new SelectListItem{Text="Thiruvananthapuram", Value = "Thiruvananthapuram"},
+            };
+            ViewBag.FamType = new List<SelectListItem>()
+            {
+                new SelectListItem{Text = "Joint", Value = "Joint"},
+                new SelectListItem{Text = "Nuclear", Value = "Nuclear"}
 
+
+
+           };
+
+
+
+            ViewBag.MStatus = new List<SelectListItem>()
+            {
+               new SelectListItem{Text = "Single", Value = "Single"},
+               new SelectListItem{Text = "Divorced", Value = "Divorced"},
+               new SelectListItem{Text = "Widowed", Value = "Widowed"},
+               new SelectListItem{Text = "Any", Value = "Any"},
+            };
 
             profile.MID = acc.MID;
             profile.Photo1 = "null";
